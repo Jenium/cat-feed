@@ -11,13 +11,10 @@ function App() {
     if (activeCards.includes(id)) {
       setActiveCards(activeCards.filter(activeCardId => activeCardId !== id));
     } else {
-      setActiveCards((prevState) => {
-        prevState.push(id);
-        return prevState;
-      });
+      setActiveCards([...activeCards, id]);
     }
   };
-  
+
   console.log(activeCards);
 
   return (
@@ -29,7 +26,12 @@ function App() {
 
         <main className="products">
 
-          {INFO.map((props) => (<Card key={props.id} {...props} onClick={() => handleClick(props.id)}/>))}
+          {INFO.map((props) => (
+            <Card key={props.id} {...props}
+              isActive={Boolean(activeCards.includes(props.id))}
+              onClick={() => handleClick(props.id)}
+            />
+          ))}
 
         </main>
       </div>

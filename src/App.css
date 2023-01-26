@@ -191,8 +191,8 @@
   opacity: .6;
 }
 
-.disabled-pic {
-  opacity: .6;
+.disabled-description {
+  color: #ffff66;
 }
 
 @media (max-width: 1180px) {
