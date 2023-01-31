@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 import { INFO } from './mock';
-import { Card } from './components/Card';
+import { Card } from './components';
 
 function App() {
   const [activeCards, setActiveCards] = useState([]);
@@ -15,8 +15,6 @@ function App() {
     }
   };
 
-  console.log(activeCards);
-
   return (
     <div className="App">
       <div className="wrapper">
@@ -28,7 +26,7 @@ function App() {
 
           {INFO.map((props) => (
             <Card key={props.id} {...props}
-              isActive={Boolean(activeCards.includes(props.id))}
+              selected={Boolean(activeCards.includes(props.id))}
               onClick={() => handleClick(props.id)}
             />
           ))}

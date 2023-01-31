@@ -7,7 +7,7 @@ export const INFO = [
         gift: 1,
         weight: '0,5',
         description: 'Печень утки разварная с артишоками.',
-        isAvailable: true,
+        disabled: false,
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const INFO = [
         gift: 2,
         weight: '2',
         description: 'Головы щучьи с чесноком, да свежайшая сёмгушка.',
-        isAvailable: true,
+        disabled: false,
     },
     {
         id: 3,
@@ -27,6 +27,6 @@ export const INFO = [
         gift: 5,
         weight: '5',
         description: 'Филе из цыплят с трюфелями в бульоне.',
-        isAvailable: false,
+        disabled: true,
     }
 ];

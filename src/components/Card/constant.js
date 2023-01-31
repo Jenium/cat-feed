@@ -1,0 +1,3 @@
+export const QUANTTITY_MICE_NOT_VISIBLE = 1;
+
+export const VISIBLE_HAPPY_CUSTOMER = 5;
