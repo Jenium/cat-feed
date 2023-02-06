@@ -16,21 +16,19 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <div className="wrapper">
-        <header className="App-header">
+        <header className="app-header">
           Ты сегодня покормил кота?
         </header>
 
         <main className="products">
-
           {INFO.map((props) => (
             <Card key={props.id} {...props}
               selected={Boolean(activeCards.includes(props.id))}
               onClick={() => handleClick(props.id)}
             />
           ))}
-
         </main>
       </div>
     </div>

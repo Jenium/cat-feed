@@ -1,6 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
+@font-face {
+  font-family: 'Exo 2';
+  src: url(./assets/fonts/Exo2-Thin.ttf);
+}
 
-.App {
+:root {
+  --color-default: #1698d9;
+  --color-default-hover: #2ea8e6;
+  --color-selected: #d91667;
+  --color-selected-hover: #e52e7a;
+  --color-disabled: #b3b3b3;
+}
+
+.app {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +32,7 @@
   padding: 36px 80px;
 }
 
-.App-header {
+.app-header {
   margin-bottom: 24px;
   font-family: 'Exo 2', sans-serif;
   font-size: 36px;
@@ -33,241 +44,14 @@
 
 .products {
   display: flex;
-  flex-wrap: wrap;
   gap: 80px;
   justify-content: center;
   align-items: center;
 }
 
-.product {
-  overflow: hidden;
-  width: 320px;
-  min-height: 509px;
-}
-
-.product__border {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #1698d9;
-  max-width: 320px;
-  height: 480px;
-  border-radius: 12px;
-  cursor: pointer;
-  -webkit-clip-path: polygon(15% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 10%);
-  clip-path: polygon(15% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 10%);
-  transition: all .3s ease-in-out;
-}
-
-.product:not(.disabled, .selected):hover .product__border, 
-.product:not(.disabled, .selected):hover .product__circle {
-  background: #2ea8e6;
-}
-
-.product.disabled .product__border {
-  cursor: not-allowed;
-}
-
-.product__card {
-  position: relative;
-  max-width: 312px;
-  height: 472px;
-  background-color: #f2f2f2;
-  padding: 21px 51px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  overflow: hidden;
-  -webkit-clip-path: polygon(14.7% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 9.7%);
-  clip-path: polygon(14.7% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 9.7%);
-}
-
-.product__text {
-  color: #666666;
-  line-height: 100%;
-  transition: color .3s ease-in-out;
-}
-
-.product__title {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 100%;
-  margin: 5px 0;
-}
-
-.product__subtitle {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 100%;
-  margin-bottom: 15px;
-}
-
-.product__quantity {
-  color: #666666;
-  font-size: 14px; 
-  line-height: 16px;
-}
-
-.product__count {
-  font-weight: 700;
-}
-
-.product__picture {
-  position: absolute;
-  bottom: -88px;
-  right: -24px;
-  width: 368px;
-  height: 360px;
-  background: url('./assets/images/Photo@2x.png') no-repeat;
-  background-size: contain;
-}
-
-.product__circle {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: #1698d9;
-  color: #fff;
-  font-size: 21px;
-  line-height: 22px;
-  font-weight: 400;
-  text-align: center;
-  transition: all .3s ease-in-out;
-}
-
-.product__weight {
-  font-size: 42px;
-  line-height: 42px;
-}
-
-.product__description {
-  margin-top: 14px;
-  color: #fff;
-  font-size: 13px;
-  line-height: 100%;
-  text-align: center;
-}
-
-.product__select {
-  position: relative;
-  color: #1698d9;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.product__select::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  border-bottom: 1px dashed #1698d9;
-}
-
-.product__dot {
-  color: #1698d9;
-}
-
-.product.selected .product__border, 
-.product.selected .product__circle {
-  background: #d91667;
-}
-
-.product.selected.hovered .product__border, 
-.product.selected.hovered .product__circle {
-  background: #e52e7a;
-}
-
-.product.selected.hovered .product__text {
-  color: #e52e7a;
-}
-
-.product.disabled .product__border,
-.product.disabled .product__circle {
-  background: #b3b3b3;
-}
-
-.product.disabled .product__text, 
-.product.disabled .product__title,
-.product.disabled .product__subtitle,
-.product.disabled .product__quantity,
-.product.disabled .product__picture {
-  color: #b3b3b3;
-  opacity: .5;
-}
-
-.product.disabled .product__description {
-  color: #ffff66;
-}
-
 @media (max-width: 1180px) {
   .wrapper {
     padding: 30px 40px;
-  }
-
-  .product {
-    width: 258px;
-    min-height: 400px;
-  }
-  
-  .product__border {
-    max-width: 258px;
-    height: 387px;
-    margin: 0 auto;
-  }
-
-  .product__card {
-    width: 250px;
-    height: 379px;
-    padding: 21px 40px;
-  }
-
-  .product__text {
-    font-size: 12px;
-  }
-  
-  .product__title {
-    font-size: 36px;
-  }
-  
-  .product__subtitle {
-    font-size: 20px;
-  }
-  
-  .product__quantity {
-    font-size: 12px; 
-  }
-  
-  .product__picture {
-    bottom: -74px;
-    right: -20px;
-    width: 297px;
-    height: 290px;
-  }
-  
-  .product__circle {
-    right: 12px;
-    bottom: 12px;
-    width: 64px;
-    height: 64px;
-    font-size: 18px;
-    line-height: 19px;
-  }
-  
-  .product__weight {
-    font-size: 32px;
-    line-height: 32px;
-  }
-  
-  .product__description {
-    font-size: 12px;
   }
 }
 
@@ -278,77 +62,17 @@
 
   .products {
     gap: 50px;
-  }
-
-  .product:first-child {
-    flex: 100%;
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 340px) {
-  .App-header {
+  .app-header {
     font-size: 28px;
     line-height: 32px;
   }
   
   .wrapper {
     padding: 30px;
-  }
-  
-  .product {
-    width: 220px;
-    min-height: 340px;
-  }
-
-  .product__border {
-    max-width: 220px;
-    height: 330px;
-  }
-
-  .product__card {
-    width: 214px;
-    height: 324px;
-    padding: 18px 30px;
-  }
-
-  .product__text {
-    font-size: 11px;
-  }
-  
-  .product__title {
-    font-size: 32px;
-  }
-  
-  .product__subtitle {
-    font-size: 18px;
-  }
-  
-  .product__quantity {
-    font-size: 11px; 
-  }
-  
-  .product__picture {
-    bottom: -74px;
-    right: -20px;
-    width: 253px;
-    height: 248px;
-  }
-  
-  .product__circle {
-    right: 12px;
-    bottom: 12px;
-    width: 64px;
-    height: 64px;
-    font-size: 18px;
-    line-height: 19px;
-  }
-  
-  .product__weight {
-    font-size: 32px;
-    line-height: 32px;
-  }
-  
-  .product__description {
-    font-size: 11px;
   }
 }
